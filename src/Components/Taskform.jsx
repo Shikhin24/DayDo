@@ -10,8 +10,11 @@ export default function Taskform({addTask}) {
         
         if(task.trim() === "") return;
 
-        
-        addTask({task: task, priority, category, completed: false});
+         // Use defaults if user didn't select
+        const finalPriority = priority || "medium";
+        const finalCategory = category || "general";
+
+        addTask({ text: task, priority: finalPriority, category: finalCategory, completed: false });
 
         //reset
         setTask('');

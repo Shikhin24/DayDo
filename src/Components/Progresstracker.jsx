@@ -1,6 +1,5 @@
-import React from 'react'
 
-export default function Progresstracker() {
+export default function Progresstracker({tasks}) {
   return (
     <div>
       <h1>Progresstracker Component</h1>
