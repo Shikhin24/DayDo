@@ -9,14 +9,9 @@ export default function Tasklist({tasks, updateTask, deleteTask}) {
         {tasks.map((task, index) => (
           <li key={index}>
             <div>
-              <span
-                 style={{
-                textDecoration: task.completed ? "line-through" : "none",
-                color: task.completed ? "gray" : "black",
-                }}
-              > 
+              <span className={task.completed ? "completed" : ""}> 
                 {task.text} 
-                <small> ({task.priority}, {task.category}) </small>
+                <small> [{task.priority} | {task.category}] </small>
               </span>
             
               <button onClick={() => toggleComplete(index)}>{task.completed ? "undo" : "complete"}</button>

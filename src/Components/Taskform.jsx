@@ -27,7 +27,7 @@ export default function Taskform({addTask}) {
             <div>
                 <input type="text" placeholder="Enter the task" 
                 onChange={(e) => setTask(e.target.value)} value={task}/>
-                <button type="submit">Add task</button>
+                <button type="submit">add task</button>
             
                 <select onChange={(e) => setPriority(e.target.value)} value={priority}> 
                     <option value="" disabled hidden>Priority</option>
