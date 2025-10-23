@@ -90,10 +90,10 @@ DayDo/
 
 **Light Mode**
 **Light Mode**  
-![Light Mode](assets/light-mode.png)  
+![Light Mode](src/assets/light-mode.png)  
 
 **Dark Mode**  
-![Dark Mode](assets/dark-mode.png)
+![Dark Mode](src/assets/dark-mode.png)
 
 ---
 
