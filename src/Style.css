@@ -1,20 +1,261 @@
+/* ===============================
+   Fonts & Base
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@700&display=swap');
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  background: #eaeaea;
+  color: #222;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Light and dark mode background toggled via JS class on body */
+body.dark-mode {
+  background: #0e0e0e;
+  color: #f3f3f3;
+}
+
+/* --- App container --- */
+.app {
+  width: 600px;
+  padding: 30px;
+  margin-top: 60px;
+  background: rgba(210, 210, 210, 0.797);
+  border: 1px solid rgba(185, 185, 185, 0.25);
+  box-shadow: 0 5px 30px rgba(91, 91, 91, 0.339);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+/* Dark mode container */
+.app.dark {
+  background: rgba(48, 48, 48, 0.192);
+  color: #cbcbcb;
+  box-shadow: 0 5px 30px rgba(32, 32, 32, 0.913);
+}
+
+/* ===============================
+   Header & Theme Toggle
+================================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Manrope', sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+p {
+  margin: 6px 0 15px;
+  margin-bottom: 25px;
+  font-style: italic;
+  opacity: 0.7;
+}
+
+.theme-toggle {
+  font-size: 22px;
+  border: 1px solid rgba(151, 151, 151, 0.189);
+  box-shadow: 0 1px 10px rgba(63, 63, 63, 0.339);
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s;
+  color: inherit;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* ===============================
+   Form & Inputs
+================================ */
+form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+input,
+select,
+button {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(43, 43, 43, 0.107);
+  color: inherit;
+  font-size: 14px;
+  outline: none;
+  border-radius: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Dropdown options */
+select {
+  appearance: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+body.dark-mode select option{
+    color: black;
+    background-color: #9c9b9b;
+}
+
+/* ===============================
+   Task List
+================================ */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 12px;
+}
+
+li div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(8px);
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: background 0.3s ease;
+  color: #3a3a3a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+li div:hover {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+/* Dark mode task row */
+body.dark-mode li div {
+  background: rgba(40, 40, 40, 0.6);
+  color: #b1b1b1;
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+body.dark-mode li div span {
+  color: #f1f1f1; /* makes task text visible in dark mode */
+}
+
+body.dark-mode li div small {
+  color: #ddd; /* optional: makes category/priority readable */
+}
+
+
+li span {
+  flex: 1;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+li span.completed {
+  text-decoration: line-through;
+  color: rgb(96, 96, 96);
+}
+
+body.dark-mode li div span {
+  color: #f1f1f1 !important; /* force light text in dark mode */
+}
+
+
+li small {
+  opacity: 0.7;
+  margin-left: 5px;
+  font-size: 12px;
+  color: inherit;
+  
+}
+
+/* Buttons at the end of row */
+li div button {
+  margin-left: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 10px;
+  font-size: 12px;
+  background: rgba(132, 132, 132, 0.2);
+}
+
+li div button:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ===============================
+   Progress Tracker
+================================ */
 .progress-tracker {
-    margin: 20px 0;
-    text-align: left;
+  margin-top: 30px;
+  padding: 8px;
+  background: rgba(255,255,255,0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 0;
+}
+
+body.dark-mode .progress-tracker {
+  background: rgba(40,40,40,0.5);
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .progress-bar {
-    width: 20%;
-    height: 20px;
-    background-color: #f0f0f0;
-    overflow: hidden;
-    margin-top: 10px;
-    border-radius: 0px;
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  margin-top: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .progress {
-    height: 100%;
-    background-color: #4caf50;
-    transition: width 0.3s ease;
+  height: 100%;
+  background: linear-gradient(90deg, #4caf50, #a8e063);
+  transition: width 0.3s ease;
+}
+
+/* ===============================
+   Clear Button
+================================ */
+.clear-btn {
+  width: 100%;
+  margin-top: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  color: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.clear-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
 }
