@@ -89,12 +89,11 @@ DayDo/
 ## 📸 Screenshots
 
 **Light Mode**
+**Light Mode**  
+![Light Mode](assets/light-mode.png)  
 
-
-**Dark Mode**
-
-
-*(Replace these links with actual screenshots.)*
+**Dark Mode**  
+![Dark Mode](assets/dark-mode.png)
 
 ---
 
