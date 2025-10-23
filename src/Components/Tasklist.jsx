@@ -9,7 +9,13 @@ export default function Tasklist({tasks, updateTask, deleteTask}) {
         {tasks.map((task, index) => (
           <li key={index}>
             <div>
-              <span> {task.text} 
+              <span
+                 style={{
+                textDecoration: task.completed ? "line-through" : "none",
+                color: task.completed ? "gray" : "black",
+                }}
+              > 
+                {task.text} 
                 <small> ({task.priority}, {task.category}) </small>
               </span>
             
