@@ -5,9 +5,16 @@ import { useEffect, useState } from "react"
 import "./Style.css"
 
 export default function App() {
-  const [tasks, setTasks] = useState([]);
-  const [theme, setTheme] = useState("light");
-  
+  const [tasks, setTasks] = useState(() => {
+    // Load saved tasks from localStorage
+    const saved = localStorage.getItem("tasks");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("theme") || "light";
+  });
+
   // Load tasks and theme from localStorage
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
@@ -24,7 +31,7 @@ export default function App() {
   }, [tasks, theme]);
 
   const addTask = (task) => {
-    setTasks([...tasks,task]);
+    setTasks([...tasks, task]);
   };
 
   const updateTask = (updatedTask, index) => {
@@ -38,12 +45,12 @@ export default function App() {
   };
 
   const clearTasks = () => {
-  setTasks([]);
-  localStorage.removeItem("tasks");
+    setTasks([]);
+    localStorage.removeItem("tasks");
   };
 
   const toggleTheme = () => {
-  setTheme((prev) => (prev === "light" ? "dark" : "light"));
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
 
 
@@ -57,9 +64,9 @@ export default function App() {
       </header>
       <p>To-Do list</p>
 
-      <Taskform addTask={addTask}/>
-      <Tasklist tasks={tasks} updateTask={updateTask} deleteTask = {deleteTask} />
-      <Progresstracker tasks={tasks}/>
+      <Taskform addTask={addTask} />
+      <Tasklist tasks={tasks} updateTask={updateTask} deleteTask={deleteTask} />
+      <Progresstracker tasks={tasks} />
 
       <button className="clear-btn" onClick={clearTasks}>Clear</button>
     </div>

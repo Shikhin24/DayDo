@@ -1,9 +1,9 @@
 /* Minimal Todo — Sharp corners, input aligned with buttons, black dark mode */
 
 /* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lexend:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lexend:wght@400;500;700&display=swap");
 
-*{
+* {
   box-sizing: border-box;
 }
 
@@ -15,7 +15,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #f6f7fb;
   color: #111827;
   line-height: 1.5;
@@ -33,7 +33,7 @@ body.dark-mode {
   background: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 body.dark-mode .app {
   background: #161616; /* dark gray instead of black */
@@ -50,12 +50,17 @@ header {
 }
 h1 {
   margin: 0;
-  font-family: 'Lexend', sans-serif;
+  font-family: "Lexend", sans-serif;
   font-weight: 600;
   font-size: clamp(1.6rem, 1.2rem + 1vw, 2.2rem);
 }
-p { margin: 6px 0 18px; color: #6b7280; }
-body.dark-mode p { color: #9ca3af; }
+p {
+  margin: 6px 0 18px;
+  color: #6b7280;
+}
+body.dark-mode p {
+  color: #9ca3af;
+}
 
 /* Theme toggle */
 .theme-toggle {
@@ -71,10 +76,19 @@ body.dark-mode p { color: #9ca3af; }
   cursor: pointer;
   border-radius: 0;
 }
-body.dark-mode .theme-toggle { border-color: #555; }
-.theme-toggle:hover { background: #f3f4f6; }
-body.dark-mode .theme-toggle:hover { background: #111; }
-.theme-toggle:focus-visible { outline: 1px solid #22c55e; outline-offset: 2px; }
+body.dark-mode .theme-toggle {
+  border-color: #555;
+}
+.theme-toggle:hover {
+  background: #f3f4f6;
+}
+body.dark-mode .theme-toggle:hover {
+  background: #111;
+}
+.theme-toggle:focus-visible {
+  outline: 1px solid #22c55e;
+  outline-offset: 2px;
+}
 
 /* Form */
 form {
@@ -85,7 +99,9 @@ form {
   justify-content: center;
   align-items: center;
 }
-input, select, button {
+input,
+select,
+button {
   font: inherit;
   color: inherit;
   padding: 8px 12px;
@@ -100,8 +116,12 @@ body.dark-mode button {
   background: #2a2a2a; /* dark gray input in dark mode */
   color: #e5e7eb;
 }
-input::placeholder { color: #9ca3af; }
-body.dark-mode input::placeholder { color: #9ca3af; }
+input::placeholder {
+  color: #9ca3af;
+}
+body.dark-mode input::placeholder {
+  color: #9ca3af;
+}
 input:focus-visible,
 select:focus-visible,
 button:focus-visible {
@@ -115,7 +135,9 @@ form button[type="submit"] {
   color: #ffffff;
   margin-left: 1px;
 }
-form button[type="submit"]:hover { filter: brightness(0.97); }
+form button[type="submit"]:hover {
+  filter: brightness(0.97);
+}
 
 /* List */
 ul {
@@ -125,7 +147,9 @@ ul {
   display: grid;
   gap: 8px;
 }
-li { margin: 0; }
+li {
+  margin: 0;
+}
 
 /* Task row */
 li div {
@@ -163,17 +187,21 @@ li span.completed {
 }
 
 body.dark-mode li span {
-  color: #e5e7eb;  /* light gray text for tasks */
+  color: #e5e7eb; /* light gray text for tasks */
 }
 
-body.dark-mode li span.completed { color: #9ca3af; }
+body.dark-mode li span.completed {
+  color: #9ca3af;
+}
 
 /* Small text inside task */
 li small {
   font-size: 13px;
   color: #6b7280;
 }
-body.dark-mode li small { color: #9ca3af; }
+body.dark-mode li small {
+  color: #9ca3af;
+}
 
 /* Row action buttons */
 li div button {
@@ -191,8 +219,12 @@ body.dark-mode li div button {
   background: #2a2a2a;
   color: #e5e7eb;
 }
-li div button:hover { background: #f3f4f6; }
-body.dark-mode li div button:hover { background: #3a3a3a; }
+li div button:hover {
+  background: #f3f4f6;
+}
+body.dark-mode li div button:hover {
+  background: #3a3a3a;
+}
 
 /* Progress Tracker */
 .progress-tracker {
@@ -213,7 +245,9 @@ body.dark-mode .progress-tracker {
   border-radius: 999px; /* only rounded element */
   overflow: hidden;
 }
-body.dark-mode .progress-bar { background: #555; }
+body.dark-mode .progress-bar {
+  background: #555;
+}
 .progress {
   height: 100%;
   width: 0%;
@@ -235,5 +269,17 @@ body.dark-mode .progress-bar { background: #555; }
   border-radius: 0;
   cursor: pointer;
 }
-.clear-btn:hover { background: #fee2e2; }
-body.dark-mode .clear-btn:hover { background: #7f1d1d; color: #fecaca; }
+
+body.dark-mode .clear-btn {
+  border: 1px solid #ef4444;
+  background: transparent;
+  color: #ef4444;
+}
+
+.clear-btn:hover {
+  background: #fee2e2;
+}
+body.dark-mode .clear-btn:hover {
+  background: #7f1d1d;
+  color: #fecaca;
+}
