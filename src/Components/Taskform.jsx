@@ -25,7 +25,7 @@ export default function Taskform({ addTask }) {
     return (
         <form onSubmit={handleSubmit}>
             <div>
-                <input type="text" placeholder="Enter the task"
+                <input type="text" placeholder="What needs to be done?"
                     onChange={(e) => setTask(e.target.value)} value={task} />
                 <button type="submit">add task</button>
 
